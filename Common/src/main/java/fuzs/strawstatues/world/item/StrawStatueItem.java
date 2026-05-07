@@ -1,7 +1,6 @@
 package fuzs.strawstatues.world.item;
 
-import fuzs.puzzleslib.api.util.v1.InteractionResultHelper;
-import fuzs.statuemenus.api.v1.world.inventory.data.StatuePose;
+import fuzs.statuemenus.common.api.v1.world.inventory.data.StatuePose;
 import fuzs.strawstatues.init.ModRegistry;
 import fuzs.strawstatues.world.entity.decoration.StrawStatue;
 import net.minecraft.core.BlockPos;
@@ -80,7 +79,7 @@ public class StrawStatueItem extends Item {
                 }
 
                 itemInHand.shrink(1);
-                return InteractionResultHelper.sidedSuccess(level.isClientSide());
+                return InteractionResult.SUCCESS;
             } else {
                 return InteractionResult.FAIL;
             }

@@ -3,11 +3,11 @@ package fuzs.strawstatues.world.entity.decoration;
 import com.mojang.authlib.GameProfile;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Dynamic;
-import fuzs.puzzleslib.api.util.v1.CommonHelper;
-import fuzs.statuemenus.api.v1.helper.ArmorStandInteractHelper;
-import fuzs.statuemenus.api.v1.world.entity.decoration.StatueEntity;
-import fuzs.statuemenus.api.v1.world.inventory.data.StatueScreenType;
-import fuzs.statuemenus.api.v1.world.inventory.data.StatueStyleOption;
+import fuzs.puzzleslib.common.api.util.v1.CommonHelper;
+import fuzs.statuemenus.common.api.v1.helper.ArmorStandInteractHelper;
+import fuzs.statuemenus.common.api.v1.world.entity.decoration.StatueEntity;
+import fuzs.statuemenus.common.api.v1.world.inventory.data.StatueScreenType;
+import fuzs.statuemenus.common.api.v1.world.inventory.data.StatueStyleOption;
 import fuzs.strawstatues.StrawStatues;
 import fuzs.strawstatues.init.ModRegistry;
 import fuzs.strawstatues.world.inventory.data.StrawStatueScreenTypes;
@@ -246,8 +246,8 @@ public class StrawStatue extends Mannequin implements StatueEntity {
     }
 
     @Override
-    public InteractionResult interact(Player player, InteractionHand interactionHand) {
-        InteractionResult interactionResult = super.interact(player, interactionHand);
+    public InteractionResult interact(Player player, InteractionHand interactionHand, Vec3 location) {
+        InteractionResult interactionResult = super.interact(player, interactionHand, location);
         if (interactionResult.consumesAction()) {
             return interactionResult;
         } else {

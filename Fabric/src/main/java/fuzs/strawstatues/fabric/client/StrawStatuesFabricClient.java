@@ -1,6 +1,6 @@
 package fuzs.strawstatues.fabric.client;
 
-import fuzs.puzzleslib.api.client.core.v1.ClientModConstructor;
+import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
 import fuzs.strawstatues.StrawStatues;
 import fuzs.strawstatues.client.StrawStatuesClient;
 import net.fabricmc.api.ClientModInitializer;

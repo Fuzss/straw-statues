@@ -1,6 +1,6 @@
 package fuzs.strawstatues.client.model.geom;
 
-import fuzs.puzzleslib.api.client.init.v1.ModelLayerFactory;
+import fuzs.puzzleslib.common.api.client.init.v1.ModelLayerFactory;
 import fuzs.strawstatues.StrawStatues;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.entity.ArmorModelSet;

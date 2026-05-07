@@ -1,20 +1,17 @@
 package fuzs.strawstatues.client.gui.screens;
 
-import fuzs.puzzleslib.api.client.gui.v2.components.SpritelessImageButton;
-import fuzs.puzzleslib.api.network.v4.MessageSender;
-import fuzs.statuemenus.api.v1.client.gui.screens.StatuePositionScreen;
-import fuzs.statuemenus.api.v1.network.client.data.DataSyncHandler;
-import fuzs.statuemenus.api.v1.world.inventory.StatueHolder;
-import fuzs.statuemenus.api.v1.world.inventory.data.StatueScreenType;
+import fuzs.puzzleslib.common.api.network.v4.MessageSender;
+import fuzs.statuemenus.common.api.v1.client.gui.screens.StatuePositionScreen;
+import fuzs.statuemenus.common.api.v1.client.gui.screens.StatueRotationsScreen;
+import fuzs.statuemenus.common.api.v1.network.client.data.DataSyncHandler;
+import fuzs.statuemenus.common.api.v1.world.inventory.StatueHolder;
+import fuzs.statuemenus.common.api.v1.world.inventory.data.StatueScreenType;
 import fuzs.strawstatues.network.client.ServerboundStrawStatueScaleMessage;
 import fuzs.strawstatues.network.client.ServerboundStrawStatueSkinPatchMessage;
 import fuzs.strawstatues.world.entity.decoration.StrawStatue;
 import fuzs.strawstatues.world.inventory.data.StrawStatueScreenTypes;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.components.AbstractWidget;
-import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.gui.components.Tooltip;
+import net.minecraft.client.gui.components.*;
 import net.minecraft.client.input.KeyEvent;
 import net.minecraft.core.ClientAsset;
 import net.minecraft.network.chat.Component;
@@ -57,7 +54,7 @@ public class StrawStatueTexturesScreen extends StatuePositionScreen {
                 ServerboundStrawStatueScaleMessage.ValueAccessor.ROTATION_X);
     };
     protected static final ArmorStandWidgetFactory<StrawStatueTexturesScreen> ROTATION_Y_WIDGET_FACTORY = (StrawStatueTexturesScreen screen, LivingEntity livingEntity) -> {
-        return screen.new RotationWidget(ROTATION_Y_COMPONENT,
+        return screen.new SliderWidget(ROTATION_Y_COMPONENT,
                 livingEntity::getYRot,
                 screen.dataSyncHandler::sendRotation);
     };
@@ -88,7 +85,7 @@ public class StrawStatueTexturesScreen extends StatuePositionScreen {
         return StrawStatueScreenTypes.TEXTURES;
     }
 
-    protected class CustomRotationWidget extends RotationWidget {
+    protected class CustomRotationWidget extends SliderWidget {
         private final ServerboundStrawStatueScaleMessage.ValueAccessor valueAccessor;
 
         public CustomRotationWidget(Component title, StrawStatue strawStatue, ServerboundStrawStatueScaleMessage.ValueAccessor valueAccessor) {
@@ -133,13 +130,11 @@ public class StrawStatueTexturesScreen extends StatuePositionScreen {
         @Override
         public void init(int posX, int posY) {
             super.init(posX, posY);
-            AbstractWidget checkmarkButton = this.addRenderableWidget(new SpritelessImageButton(posX + 174,
+            AbstractWidget checkmarkButton = this.addRenderableWidget(new ImageButton(posX + 174,
                     posY + 1,
                     20,
                     20,
-                    212,
-                    0,
-                    getArmorStandWidgetsLocation(),
+                    StatueRotationsScreen.TICK_BUTTON_SPRITES,
                     (Button button) -> {
                         Identifier identifier = Identifier.tryParse(this.editBox.getValue());
                         if (identifier != null) {

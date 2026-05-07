@@ -1,6 +1,6 @@
 package fuzs.strawstatues.world.inventory.data;
 
-import fuzs.statuemenus.api.v1.world.inventory.data.StatueStyleOption;
+import fuzs.statuemenus.common.api.v1.world.inventory.data.StatueStyleOption;
 import fuzs.strawstatues.StrawStatues;
 import fuzs.strawstatues.world.entity.decoration.StrawStatue;
 import net.minecraft.world.entity.Entity;

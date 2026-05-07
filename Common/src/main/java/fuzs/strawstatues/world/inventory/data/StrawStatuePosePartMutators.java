@@ -1,7 +1,7 @@
 package fuzs.strawstatues.world.inventory.data;
 
-import fuzs.statuemenus.api.v1.world.inventory.data.PosePartMutator;
-import fuzs.statuemenus.api.v1.world.inventory.data.StatuePose;
+import fuzs.statuemenus.common.api.v1.world.inventory.data.PosePartMutator;
+import fuzs.statuemenus.common.api.v1.world.inventory.data.StatuePose;
 import fuzs.strawstatues.StrawStatues;
 
 import java.util.List;

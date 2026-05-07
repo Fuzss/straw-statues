@@ -1,11 +1,11 @@
 package fuzs.strawstatues.client.gui.screens;
 
-import fuzs.puzzleslib.api.network.v4.MessageSender;
-import fuzs.statuemenus.api.v1.client.gui.components.TickBoxButton;
-import fuzs.statuemenus.api.v1.client.gui.screens.StatueTickBoxScreen;
-import fuzs.statuemenus.api.v1.network.client.data.DataSyncHandler;
-import fuzs.statuemenus.api.v1.world.inventory.StatueHolder;
-import fuzs.statuemenus.api.v1.world.inventory.data.StatueScreenType;
+import fuzs.puzzleslib.common.api.network.v4.MessageSender;
+import fuzs.statuemenus.common.api.v1.client.gui.components.CheckboxTextButton;
+import fuzs.statuemenus.common.api.v1.client.gui.screens.StatueTickBoxScreen;
+import fuzs.statuemenus.common.api.v1.network.client.data.DataSyncHandler;
+import fuzs.statuemenus.common.api.v1.world.inventory.StatueHolder;
+import fuzs.statuemenus.common.api.v1.world.inventory.data.StatueScreenType;
 import fuzs.strawstatues.network.client.ServerboundStrawStatueModelPartMessage;
 import fuzs.strawstatues.network.client.ServerboundStrawStatueProfileMessage;
 import fuzs.strawstatues.world.entity.decoration.StrawStatue;
@@ -40,17 +40,21 @@ public class StrawStatueModelPartsScreen extends StatueTickBoxScreen<PlayerModel
     @Override
     protected AbstractWidget makeTickBoxWidget(LivingEntity livingEntity, int buttonStartY, int index, PlayerModelPart option) {
         StrawStatue strawStatue = (StrawStatue) livingEntity;
-        return new TickBoxButton(this.leftPos + 96,
+        return new CheckboxTextButton(this.leftPos + 96,
                 this.topPos + buttonStartY + index * 22,
                 6,
                 76,
-                option.getName(),
-                () -> strawStatue.isModelPartShown(option),
                 (Button button) -> {
                     boolean value = !strawStatue.isModelPartShown(option);
                     strawStatue.setModelPartShown(option, value);
                     MessageSender.broadcast(new ServerboundStrawStatueModelPartMessage(option, value));
-                });
+                },
+                option.getName()) {
+            @Override
+            protected boolean isTicked() {
+                return strawStatue.isModelPartShown(option);
+            }
+        };
     }
 
     @Override

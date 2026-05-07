@@ -1,7 +1,7 @@
 package fuzs.strawstatues.init;
 
-import fuzs.puzzleslib.api.init.v3.registry.RegistryManager;
-import fuzs.statuemenus.api.v1.world.inventory.StatueMenu;
+import fuzs.puzzleslib.common.api.init.v3.registry.RegistryManager;
+import fuzs.statuemenus.common.api.v1.world.inventory.StatueMenu;
 import fuzs.strawstatues.StrawStatues;
 import fuzs.strawstatues.core.Proxy;
 import fuzs.strawstatues.world.entity.decoration.StrawStatue;

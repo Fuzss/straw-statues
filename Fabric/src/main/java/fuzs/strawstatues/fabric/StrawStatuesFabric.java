@@ -1,6 +1,6 @@
 package fuzs.strawstatues.fabric;
 
-import fuzs.puzzleslib.api.core.v1.ModConstructor;
+import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
 import fuzs.strawstatues.StrawStatues;
 import net.fabricmc.api.ModInitializer;
 

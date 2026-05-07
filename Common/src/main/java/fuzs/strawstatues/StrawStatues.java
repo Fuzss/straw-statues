@@ -1,10 +1,10 @@
 package fuzs.strawstatues;
 
-import fuzs.puzzleslib.api.core.v1.ModConstructor;
-import fuzs.puzzleslib.api.core.v1.context.EntityAttributesContext;
-import fuzs.puzzleslib.api.core.v1.context.PayloadTypesContext;
-import fuzs.puzzleslib.api.event.v1.BuildCreativeModeTabContentsCallback;
-import fuzs.statuemenus.api.v1.world.inventory.data.StatuePose;
+import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
+import fuzs.puzzleslib.common.api.core.v1.context.EntityAttributesContext;
+import fuzs.puzzleslib.common.api.core.v1.context.PayloadTypesContext;
+import fuzs.puzzleslib.common.api.event.v1.BuildCreativeModeTabContentsCallback;
+import fuzs.statuemenus.common.api.v1.world.inventory.data.StatuePose;
 import fuzs.strawstatues.init.ModRegistry;
 import fuzs.strawstatues.network.client.ServerboundStrawStatueModelPartMessage;
 import fuzs.strawstatues.network.client.ServerboundStrawStatueProfileMessage;

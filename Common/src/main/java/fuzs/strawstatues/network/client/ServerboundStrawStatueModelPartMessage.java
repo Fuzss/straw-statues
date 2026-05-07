@@ -1,9 +1,9 @@
 package fuzs.strawstatues.network.client;
 
-import fuzs.puzzleslib.api.network.v4.codec.ExtraStreamCodecs;
-import fuzs.puzzleslib.api.network.v4.message.MessageListener;
-import fuzs.puzzleslib.api.network.v4.message.play.ServerboundPlayMessage;
-import fuzs.statuemenus.api.v1.world.inventory.StatueMenu;
+import fuzs.puzzleslib.common.api.network.v4.codec.ExtraStreamCodecs;
+import fuzs.puzzleslib.common.api.network.v4.message.MessageListener;
+import fuzs.puzzleslib.common.api.network.v4.message.play.ServerboundPlayMessage;
+import fuzs.statuemenus.common.api.v1.world.inventory.StatueMenu;
 import fuzs.strawstatues.world.entity.decoration.StrawStatue;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;

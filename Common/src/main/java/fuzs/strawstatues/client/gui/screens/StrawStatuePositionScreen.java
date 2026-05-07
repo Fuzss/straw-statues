@@ -1,9 +1,9 @@
 package fuzs.strawstatues.client.gui.screens;
 
-import fuzs.statuemenus.api.v1.client.gui.screens.StatuePositionScreen;
-import fuzs.statuemenus.api.v1.network.client.data.DataSyncHandler;
-import fuzs.statuemenus.api.v1.world.inventory.StatueHolder;
-import fuzs.statuemenus.api.v1.world.inventory.data.StatueScreenType;
+import fuzs.statuemenus.common.api.v1.client.gui.screens.StatuePositionScreen;
+import fuzs.statuemenus.common.api.v1.network.client.data.DataSyncHandler;
+import fuzs.statuemenus.common.api.v1.world.inventory.StatueHolder;
+import fuzs.statuemenus.common.api.v1.world.inventory.data.StatueScreenType;
 import fuzs.strawstatues.world.inventory.data.StrawStatueScreenTypes;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.core.Direction;

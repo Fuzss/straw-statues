@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    modCompileOnlyApi(libs.puzzleslib.common)
-    modCompileOnlyApi(libs.statuemenus.common)
+    modCompileOnlyApi(sharedLibs.puzzleslib.common)
+    modCompileOnlyApi(sharedLibs.statuemenus.common)
 }
 
 multiloader {

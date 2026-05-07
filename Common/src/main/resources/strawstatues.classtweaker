@@ -1,4 +1,4 @@
-accessWidener   v2  named
+classTweaker    v2  official
 accessible  method  net/minecraft/world/entity/decoration/Mannequin getProfile  ()Lnet/minecraft/world/item/component/ResolvableProfile;
 accessible  method  net/minecraft/world/entity/decoration/Mannequin setProfile  (Lnet/minecraft/world/item/component/ResolvableProfile;)V
 extendable  method  net/minecraft/world/entity/decoration/Mannequin setProfile  (Lnet/minecraft/world/item/component/ResolvableProfile;)V

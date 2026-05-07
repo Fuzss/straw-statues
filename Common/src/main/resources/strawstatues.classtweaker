@@ -8,3 +8,4 @@ mutable field   net/minecraft/client/renderer/entity/layers/CapeLayer   model   
 accessible  field   net/minecraft/client/renderer/entity/layers/Deadmau5EarsLayer   model   Lnet/minecraft/client/model/HumanoidModel;
 mutable field   net/minecraft/client/renderer/entity/layers/Deadmau5EarsLayer   model   Lnet/minecraft/client/model/HumanoidModel;
 accessible  field   net/minecraft/client/renderer/entity/EntityRenderDispatcher equipmentAssets Lnet/minecraft/client/resources/model/EquipmentAssetManager;
+accessible  method  net/minecraft/server/network/ServerGamePacketListenerImpl   tryPickItem (Lnet/minecraft/world/item/ItemStack;)V

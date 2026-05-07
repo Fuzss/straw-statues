@@ -2,10 +2,10 @@ package fuzs.strawstatues.neoforge.client;
 
 import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
 import fuzs.puzzleslib.neoforge.api.data.v2.core.DataProviderHelper;
-import fuzs.strawstatues.StrawStatues;
-import fuzs.strawstatues.client.StrawStatuesClient;
-import fuzs.strawstatues.data.client.ModLanguageProvider;
-import fuzs.strawstatues.data.client.ModModelProvider;
+import fuzs.strawstatues.common.StrawStatues;
+import fuzs.strawstatues.common.client.StrawStatuesClient;
+import fuzs.strawstatues.common.data.client.ModLanguageProvider;
+import fuzs.strawstatues.common.data.client.ModModelProvider;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.Mod;
 

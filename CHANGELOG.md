@@ -10,3 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Update to Minecraft 26.1.x
+
+### Fixed
+
+- Fix middle-clicking a straw statue when playing on a server yielding an item without additional data

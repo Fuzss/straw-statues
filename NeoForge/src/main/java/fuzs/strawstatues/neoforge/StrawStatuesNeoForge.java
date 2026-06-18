@@ -3,8 +3,9 @@ package fuzs.strawstatues.neoforge;
 import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
 import fuzs.puzzleslib.neoforge.api.data.v2.core.DataProviderHelper;
 import fuzs.strawstatues.common.StrawStatues;
-import fuzs.strawstatues.common.data.loot.ModEntityTypeLootProvider;
 import fuzs.strawstatues.common.data.ModRecipeProvider;
+import fuzs.strawstatues.common.data.loot.ModEntityTypeLootProvider;
+import fuzs.strawstatues.common.data.tags.ModEntityTypeTagsProvider;
 import net.neoforged.fml.common.Mod;
 
 @Mod(StrawStatues.MOD_ID)
@@ -14,7 +15,7 @@ public class StrawStatuesNeoForge {
         ModConstructor.construct(StrawStatues.MOD_ID, StrawStatues::new);
         DataProviderHelper.registerDataProviders(StrawStatues.MOD_ID,
                 ModEntityTypeLootProvider::new,
-                ModRecipeProvider::new
-        );
+                ModEntityTypeTagsProvider::new,
+                ModRecipeProvider::new);
     }
 }

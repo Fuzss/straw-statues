@@ -15,7 +15,7 @@ public class StrawStatueScreenTypes {
     public static final StatueScreenType POSITION = new StatueScreenType(StrawStatues.id("position"),
             new ItemStackTemplate(Items.GRASS_BLOCK));
     public static final StatueScreenType MODEL_PARTS = new StatueScreenType(StrawStatues.id("model_parts"),
-            new ItemStackTemplate(Items.YELLOW_WOOL));
+            new ItemStackTemplate(Items.WOOL.yellow()));
     public static final StatueScreenType TEXTURES = new StatueScreenType(StrawStatues.id("textures"),
             new ItemStackTemplate(Items.HAY_BLOCK));
     public static final List<StatueScreenType> TYPES = List.of(ROTATIONS,

@@ -14,6 +14,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.PostSpawnProcessor;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -24,8 +25,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-
-import java.util.function.Consumer;
 
 public class StrawStatueItem extends Item {
 
@@ -51,11 +50,16 @@ public class StrawStatueItem extends Item {
                 if (level instanceof ServerLevel serverLevel) {
                     // do not use EntityType::spawn which adds the entity directly, as it will not send the initial rotations correctly
                     Player player = context.getPlayer();
-                    Consumer<StrawStatue> consumer = EntityType.createDefaultStackConfig(serverLevel,
+                    PostSpawnProcessor<StrawStatue> postSpawnConfig = EntityType.createDefaultStackConfig(serverLevel,
                             itemInHand,
                             context.getPlayer());
                     StrawStatue strawStatue = ModRegistry.STRAW_STATUE_ENTITY_TYPE.value()
-                            .create(serverLevel, consumer, blockPos, EntitySpawnReason.SPAWN_ITEM_USE, true, true);
+                            .create(serverLevel,
+                                    postSpawnConfig,
+                                    blockPos,
+                                    EntitySpawnReason.SPAWN_ITEM_USE,
+                                    true,
+                                    true);
                     if (strawStatue != null) {
                         float yRot =
                                 Mth.floor((Mth.wrapDegrees(context.getRotation() - 180.0F) + 22.5F) / 45.0F) * 45.0F;

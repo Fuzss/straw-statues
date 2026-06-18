@@ -88,7 +88,7 @@ public class ClientStrawStatue extends StrawStatue implements ClientAvatarEntity
 
     private void updateProfile() {
         this.updateSkin();
-        if (Minecraft.getInstance().screen instanceof StrawStatueModelPartsScreen screen) {
+        if (Minecraft.getInstance().gui.screen() instanceof StrawStatueModelPartsScreen screen) {
             screen.applyNameValue();
         }
     }

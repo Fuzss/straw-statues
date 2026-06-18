@@ -17,6 +17,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.PostSpawnProcessor;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -24,8 +25,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.DispenserBlock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.function.Consumer;
 
 public class StrawStatues implements ModConstructor {
     public static final String MOD_ID = "strawstatues";
@@ -58,12 +57,12 @@ public class StrawStatues implements ModConstructor {
                 Direction direction = blockSource.state().getValue(DispenserBlock.FACING);
                 BlockPos blockPos = blockSource.pos().relative(direction);
                 ServerLevel serverLevel = blockSource.level();
-                Consumer<StrawStatue> consumer = EntityType.appendDefaultStackConfig((StrawStatue strawStatue) -> {
+                PostSpawnProcessor<StrawStatue> postSpawnConfig = EntityType.appendDefaultStackConfig((StrawStatue strawStatue) -> {
                     strawStatue.setYRot(direction.toYRot());
                     StatuePose.randomValue().applyToEntity(strawStatue);
                 }, serverLevel, itemStack, null);
                 StrawStatue strawStatue = ModRegistry.STRAW_STATUE_ENTITY_TYPE.value()
-                        .spawn(serverLevel, consumer, blockPos, EntitySpawnReason.DISPENSER, false, false);
+                        .spawn(serverLevel, postSpawnConfig, blockPos, EntitySpawnReason.DISPENSER, false, false);
                 if (strawStatue != null) {
                     itemStack.shrink(1);
                 }

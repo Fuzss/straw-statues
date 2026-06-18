@@ -10,11 +10,11 @@ import fuzs.strawstatues.common.network.client.ServerboundStrawStatueScaleMessag
 import fuzs.strawstatues.common.network.client.ServerboundStrawStatueSkinPatchMessage;
 import fuzs.strawstatues.common.world.entity.decoration.StrawStatue;
 import fuzs.strawstatues.common.world.inventory.data.StrawStatueScreenTypes;
-import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.components.*;
 import net.minecraft.client.input.KeyEvent;
 import net.minecraft.core.ClientAsset;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.ARGB;
 import net.minecraft.world.entity.LivingEntity;
@@ -171,7 +171,7 @@ public class StrawStatueTexturesScreen extends StatuePositionScreen {
                     this.editBox.setTextColor(EditBox.DEFAULT_TEXT_COLOR);
                 } else {
                     checkmarkButton.active = false;
-                    this.editBox.setTextColor(ARGB.opaque(ChatFormatting.RED.getColor()));
+                    this.editBox.setTextColor(ARGB.opaque(TextColor.RED.getValue()));
                 }
 
                 if (identifier != null && !identifier.getPath().isEmpty()) {

@@ -6,11 +6,17 @@
     "26.1.x": "maintained",
     "26.2.x": "primary"
   },
-  "properties": {
-    "distributions.curseforge.id": "682564",
-    "distributions.curseforge.slug": "straw-statues",
-    "distributions.github.slug": "straw-statues",
-    "distributions.modrinth.id": "2fltysAl",
-    "distributions.modrinth.slug": "straw-statues"
+  "distributions": {
+    "curseforge": {
+      "id": "682564",
+      "slug": "straw-statues"
+    },
+    "github": {
+      "slug": "straw-statues"
+    },
+    "modrinth": {
+      "id": "2fltysAl",
+      "slug": "straw-statues"
+    }
   }
 }

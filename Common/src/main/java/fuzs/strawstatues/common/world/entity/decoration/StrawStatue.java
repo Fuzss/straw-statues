@@ -425,7 +425,7 @@ public class StrawStatue extends Mannequin implements StatueEntity {
                             this.level().broadcastEntityEvent(this, EntityEvent.ARMORSTAND_WOBBLE);
                             this.gameEvent(GameEvent.ENTITY_DAMAGE, damageSource.getEntity());
                             this.lastHit = gameTime;
-                            this.invulnerableTime = 20;
+                            this.setInvulnerableTime(20);
                             this.hurtDuration = 10;
                             this.hurtTime = this.hurtDuration;
                         } else {

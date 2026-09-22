@@ -1,24 +1,18 @@
 package fuzs.strawstatues.common.data.loot;
 
-import fuzs.puzzleslib.common.api.data.v2.AbstractLootProvider;
-import fuzs.puzzleslib.common.api.data.v2.core.DataProviderContext;
+import fuzs.puzzleslib.common.api.data.v3.loot.AbstractEntityLootSubProvider;
 import fuzs.strawstatues.common.init.ModRegistry;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.world.level.storage.loot.LootTable;
 
-public class ModEntityTypeLootProvider extends AbstractLootProvider.EntityTypes {
+public class ModEntityTypeLootProvider extends AbstractEntityLootSubProvider {
 
-    public ModEntityTypeLootProvider(DataProviderContext context) {
-        super(context);
+    public ModEntityTypeLootProvider(LootTableSubProvider.Context output) {
+        super(output);
     }
 
     @Override
-    public void addLootTables() {
+    public void generate() {
         this.add(ModRegistry.STRAW_STATUE_ENTITY_TYPE.value(), LootTable.lootTable());
-    }
-
-    @Override
-    protected boolean canHaveLootTable(EntityType<?> entityType) {
-        return entityType == ModRegistry.STRAW_STATUE_ENTITY_TYPE.value() || super.canHaveLootTable(entityType);
     }
 }

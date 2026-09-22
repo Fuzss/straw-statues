@@ -132,17 +132,17 @@ public class StrawStatueRenderer extends AvatarRenderer<ClientStrawStatue> {
 
     @Override
     protected void setupRotations(AvatarRenderState renderState, PoseStack poseStack, float bodyRot, float scale) {
-        poseStack.mulPose(Axis.ZP.rotationDegrees(180.0F - ((StrawStatueRenderState) renderState).rotZ));
-        poseStack.mulPose(Axis.YP.rotationDegrees(180.0F - bodyRot));
-        poseStack.mulPose(Axis.XP.rotationDegrees(180.0F - ((StrawStatueRenderState) renderState).rotX));
+        poseStack.rotateDegrees(Axis.ZP, 180.0F - ((StrawStatueRenderState) renderState).rotZ);
+        poseStack.rotateDegrees(Axis.YP, 180.0F - bodyRot);
+        poseStack.rotateDegrees(Axis.XP, 180.0F - ((StrawStatueRenderState) renderState).rotX);
         float wiggle = ((StrawStatueRenderState) renderState).wiggle;
         if (wiggle < 5.0F) {
-            poseStack.mulPose(Axis.YP.rotationDegrees(Mth.sin(wiggle / 1.5F * Mth.PI) * 3.0F));
+            poseStack.rotateDegrees(Axis.YP, Mth.sin(wiggle / 1.5F * Mth.PI) * 3.0F);
         }
 
         if (renderState.isUpsideDown) {
             poseStack.translate(0.0F, (renderState.boundingBoxHeight + 0.1F) / scale, 0.0F);
-            poseStack.mulPose(Axis.ZP.rotationDegrees(180.0F));
+            poseStack.rotateDegrees(Axis.ZP, 180.0F);
         }
     }
 }

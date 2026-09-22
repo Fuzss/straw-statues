@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "strawstatues:straw_statue"
+        "recipes": "strawstatues:straw_statue"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
